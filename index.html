@@ -51,6 +51,7 @@
         <a href="#connect" class="nav-link">Connect HTTP client</a>
         <a href="#cache" class="nav-link">Cache</a>
         <a href="#localization" class="nav-link">Localization</a>
+        <a href="#packages" class="nav-link">Packages</a>
         <p class="nav-label">Operations</p>
         <a href="#errors" class="nav-link">Errors & logging</a>
         <a href="#console" class="nav-link">Console commands</a>
@@ -310,6 +311,41 @@ php green migrate --force  # Allow destructive operations</code></pre><pre data-
 });</code></pre><div class="callout warning"><strong>Safe by default</strong><p>Destructive operations such as dropping a table require <code>--force</code>. Use <code>--dry</code> first to inspect generated SQL.</p></div></section>
 
         <section id="helpers" class="doc-section"><span class="section-kicker">21 — REFERENCE</span><h2>Helper reference</h2><div class="reference-table" role="region" aria-label="Global helper reference" tabindex="0"><table><thead><tr><th>Helper</th><th>Purpose</th></tr></thead><tbody><tr><td><code>view()</code> / <code>response_json()</code></td><td>Render Twig or create JSON responses</td></tr><tr><td><code>session()</code> / <code>redirect()</code></td><td>Session state and redirects</td></tr><tr><td><code>transform()</code> / <code>paginate()</code></td><td>Serialize and paginate data</td></tr><tr><td><code>csrf_token()</code> / <code>csrf_field()</code></td><td>Create CSRF token pairs or inputs</td></tr><tr><td><code>connect()</code> / <code>drive()</code> / <code>cache()</code></td><td>Resolve infrastructure managers</td></tr><tr><td><code>signal()</code> / <code>authorizer()</code></td><td>Events and authorization</td></tr><tr><td><code>route()</code></td><td>Generate a named route URL</td></tr><tr><td><code>leaf()</code> / <code>leaf_config()</code></td><td>Development dump and configuration</td></tr></tbody></table></div></section>
+        <section id="packages" class="doc-section packages-section">
+          <span class="section-kicker">GREEN ECOSYSTEM</span>
+          <h2>Packages</h2>
+          <p>Focused packages extend Green without adding weight to the framework core. Install only the capabilities your application needs.</p>
+          <div class="packages-grid">
+            <article class="package-card">
+              <div class="package-icon" aria-hidden="true">文</div>
+              <div class="package-content">
+                <h3>Green Locale</h3>
+                <code>yasser-elgammal/green-locale</code>
+                <p>Store translated model attributes such as names, descriptions, and slugs in JSON columns, then resolve them explicitly for the current locale.</p>
+              </div>
+              <a class="package-link" href="https://github.com/YasserElgammal/green-locale" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="package-card">
+              <div class="package-icon" aria-hidden="true">◆</div>
+              <div class="package-content">
+                <h3>Green Auth JWT</h3>
+                <code>yasser-elgammal/green-auth-jwt</code>
+                <p>Add production-ready stateless JWT authentication with HMAC or RSA algorithms and optional database-backed refresh-token rotation.</p>
+              </div>
+              <a class="package-link" href="https://github.com/YasserElgammal/green-auth-jwt" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="package-card">
+              <div class="package-icon" aria-hidden="true">✦</div>
+              <div class="package-content">
+                <h3>Green AI Assistant</h3>
+                <code>yasser-elgammal/green-ai-assistant</code>
+                <p>Use Gemini, OpenAI, or xAI Grok through one abstraction for text generation, multi-turn chat, image analysis, and exception analysis.</p>
+              </div>
+              <a class="package-link" href="https://github.com/YasserElgammal/green-ai-assistant" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </section>
+
         <section id="about-yasser" class="doc-section author-section">
           <span class="section-kicker">CREATOR &amp; MAINTAINER</span>
           <div class="author-card">
