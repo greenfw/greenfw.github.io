@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Green is an explicit, lightweight PHP framework for modern web applications and APIs.">
+  <meta name="theme-color" content="#f6fbf3">
+  <title>Green Framework — Documentation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('green-theme')||((matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light')}catch(e){}</script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="Green documentation home">
+      <img class="brand-logo" src="assets/green_logo.png" alt="Green Framework">
+      <span class="brand-docs">Docs</span>
+    </a>
+    <button class="search-trigger" type="button" aria-label="Search documentation"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg><span>Search documentation</span><kbd>Ctrl K</kbd></button>
+    <nav class="top-actions" aria-label="Site actions">
+      <a class="icon-button" href="https://github.com/YasserElgammal/green" target="_blank" rel="noreferrer" aria-label="View Green on GitHub"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.93c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.65c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle color theme"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg></button>
+      <button class="icon-button menu-button" id="menu-toggle" type="button" aria-label="Open navigation"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+      <nav>
+        <p class="nav-label">Start here</p>
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#installation" class="nav-link">Installation</a>
+        <a href="#first-app" class="nav-link">Your first route</a>
+        <p class="nav-label">The essentials</p>
+        <a href="#routing" class="nav-link">Routing</a>
+        <a href="#requests" class="nav-link">Requests & responses</a>
+        <a href="#database" class="nav-link">Database</a>
+        <a href="#api" class="nav-link">API & pagination</a>
+        <a href="#iql" class="nav-link">Include Query Language</a>
+        <a href="#validation" class="nav-link">Validation</a>
+        <a href="#views" class="nav-link">Views & Twig</a>
+        <p class="nav-label">Application</p>
+        <a href="#authentication" class="nav-link">Authentication</a>
+        <a href="#authorization" class="nav-link">Authorization</a>
+        <a href="#sessions-security" class="nav-link">Sessions & CSRF</a>
+        <a href="#queues" class="nav-link">Queues</a>
+        <a href="#signals" class="nav-link">Signals</a>
+        <a href="#storage" class="nav-link">Storage</a>
+        <a href="#connect" class="nav-link">Connect HTTP client</a>
+        <a href="#cache" class="nav-link">Cache</a>
+        <a href="#localization" class="nav-link">Localization</a>
+        <p class="nav-label">Operations</p>
+        <a href="#errors" class="nav-link">Errors & logging</a>
+        <a href="#console" class="nav-link">Console commands</a>
+        <a href="#migrations" class="nav-link">Migrations & schema</a>
+        <a href="#helpers" class="nav-link">Helper reference</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#deployment" class="nav-link">Deployment</a>
+        <p class="nav-label">About</p>
+        <a href="#about-yasser" class="nav-link">Yasser Elgammal</a>
+      </nav>
+      <div class="sidebar-card"><span>GREEN PHILOSOPHY</span><strong>Explicit over magic.</strong><p>Small core. Predictable runtime. Your application stays yours.</p></div>
+    </aside>
+
+    <main id="content" class="content">
+      <article>
+        <section id="overview" class="hero doc-section" data-title="Overview">
+          <div class="eyebrow"><span></span> PHP 8.3+ · Lightweight by design</div>
+          <h1>Build clearly.<br><em>Ship confidently.</em></h1>
+          <p class="hero-copy">Green is an explicit PHP framework for modern web applications and APIs. It keeps the runtime understandable while giving you routing, validation, persistence, queues, caching, and more.</p>
+          <div class="hero-actions"><a class="button primary" href="#installation">Get started <span>→</span></a><a class="button secondary" href="https://github.com/YasserElgammal/green" target="_blank" rel="noreferrer">View on GitHub</a></div>
+          <div class="install-command"><span aria-hidden="true">$</span><code>composer create-project yasser-elgammal/green my-app</code><button class="copy-button" aria-label="Copy install command" data-copy="composer create-project yasser-elgammal/green my-app"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div>
+          <div class="feature-grid">
+            <div class="feature"><span class="feature-icon">↗</span><h3>Attribute routing</h3><p>Readable routes live beside the controller actions they invoke.</p></div>
+            <div class="feature"><span class="feature-icon">◇</span><h3>Explicit data layer</h3><p>Pure models and Table Gateways keep state separate from persistence.</p></div>
+            <div class="feature"><span class="feature-icon">⌁</span><h3>Small, extensible core</h3><p>Container-owned services and focused managers without ecosystem lock-in.</p></div>
+          </div>
+        </section>
+
+        <section id="installation" class="doc-section">
+          <span class="section-kicker">01 — GETTING STARTED</span><h2>Installation</h2>
+          <p>Start a new Green application with Composer. The skeleton includes a ready-to-run web app, environment configuration, migrations, and tests.</p>
+          <div class="callout"><strong>Requirements</strong><p>PHP 8.3 or newer, Composer 2, and the PHP extensions required by your selected database driver.</p></div>
+          <h3 id="create-project">Create the project</h3>
+          <pre data-lang="TERMINAL"><code>composer create-project yasser-elgammal/green my-app
+cd my-app
+cp .env.example .env
+php green serve</code></pre>
+          <p>Open <code>http://localhost:8000</code>. Green’s front controller captures the request, boots configured providers, dispatches the route, and sends the response.</p>
+        </section>
+
+        <section id="first-app" class="doc-section">
+          <span class="section-kicker">02 — FIRST STEPS</span><h2>Your first route</h2>
+          <p>Routes are PHP attributes attached directly to controller methods. Return an array for JSON, a string, or a response object.</p>
+          <pre data-lang="PHP"><code>&lt;?php
+
+namespace App\Controllers;
+
+use YasserElgammal\Green\Http\Request;
+use YasserElgammal\Green\Routing\Route;
+
+final class HelloController
+{
+    #[Route('GET', '/hello/{name}', name: 'hello')]
+    public function show(Request $request, string $name): array
+    {
+        return ['message' =&gt; "Hello, {$name}!"];
+    }
+}</code></pre>
+          <p>Register the controller with the router at your application boundary. Green reflects on the action signature and injects the current request and route parameters.</p>
+        </section>
+
+        <section id="routing" class="doc-section">
+          <span class="section-kicker">03 — HTTP</span><h2>Routing</h2>
+          <p>Named routes, ordered middleware, dynamic parameters, and policy attributes remain visible where behavior is defined.</p>
+          <pre data-lang="PHP"><code>#[Route(
+    'PUT',
+    '/users/{id}',
+    middleware: [AuthMiddleware::class, AuditMiddleware::class],
+    name: 'users.update'
+)]
+#[PolicyAttribute('update', 'id')]
+public function update(Request $request, int $id): array
+{
+    return ['updated' =&gt; $id];
+}</code></pre>
+          <div class="two-col"><div><h3>Generate URLs</h3><p>Use <code>route('users.update', ['id' =&gt; 42])</code>. Extra values become query parameters.</p></div><div><h3>Redirect</h3><p>Return <code>redirect('/login')</code> to produce a redirect response.</p></div></div>
+        </section>
+
+        <section id="requests" class="doc-section"><span class="section-kicker">04 — HTTP</span><h2>Requests & responses</h2><p>The current <code>Request</code> is available through dependency injection. Controller output is normalized into a concrete response—arrays become JSON responses automatically.</p><pre data-lang="PHP"><code>public function store(Request $request): Response
+{
+    $title = $request-&gt;input('title');
+
+    return response()
+        -&gt;json(['created' =&gt; true, 'title' =&gt; $title], 201);
+}</code></pre></section>
+
+        <section id="database" class="doc-section"><span class="section-kicker">05 — DATA</span><h2>Database</h2><p>Green separates state from persistence. <code>Model</code> is a pure data object; <code>Table</code> owns queries, hydration, relations, and writes.</p><div class="principle"><div class="principle-item"><b>Model</b><span>State + dirty tracking</span></div><span>→</span><div class="principle-item"><b>Table Gateway</b><span>Persistence + relations</span></div><span>→</span><div class="principle-item"><b>Doctrine DBAL</b><span>Queries + connections</span></div></div><pre data-lang="PHP"><code>$users = $userTable
+    -&gt;include('posts')
+    -&gt;query()
+    -&gt;where('status', 'active')
+    -&gt;whereGroup(fn ($query) =&gt; $query
+        -&gt;where('role', 'admin')
+        -&gt;orWhere('score', '&gt;=', 90)
+    )
+    -&gt;latest()
+    -&gt;paginate(perPage: 15, page: 1);</code></pre><p>Relations support <code>hasOne</code>, <code>hasMany</code>, <code>belongsTo</code>, many-to-many, and polymorphic loading. Eager loading batches related records to prevent N+1 queries.</p></section>
+
+        <section id="api" class="doc-section"><span class="section-kicker">06 — API LAYER</span><h2>Transformers & pagination</h2><p>Transformers define the public JSON shape of models and automatically transform relations eager-loaded with <code>include()</code>.</p><pre data-lang="PHP"><code>final class PostTransformer extends Transformer
+{
+    public function transform(Model $model): array
+    {
+        return ['id' =&gt; $model-&gt;id, 'title' =&gt; $model-&gt;title];
+    }
+
+    protected function includes(): array
+    {
+        return ['author' =&gt; new UserTransformer()];
+    }
+}</code></pre><h3 id="pagination">Unified pagination</h3><p>Query pagination retains filters and ordering; <code>Table::paginate()</code> is the full-table shortcut. Both return <code>data</code> and <code>meta</code>.</p><pre data-lang="PHP"><code>$results = $posts-&gt;query()
+    -&gt;where('status', 'published')
+    -&gt;latest()
+    -&gt;paginate(perPage: 15, page: 1, withCount: false);</code></pre><div class="callout"><strong>Skip expensive counts</strong><p>With <code>withCount: false</code>, Green fetches one extra row to determine <code>has_next</code>; total fields are <code>null</code>.</p></div></section>
+
+        <section id="iql" class="doc-section"><span class="section-kicker">07 — RELATIONS</span><h2>Include Query Language</h2><p>IQL constrains eager-loaded relations with one compact string: nested relations, selection, filtering, ordering, limits, offsets, and batch aggregations.</p><pre data-lang="PHP"><code>$table-&gt;include(
+    'comments(limit:10,order:created_at|desc).author(select:id|name),roles'
+);
+
+$table-&gt;include('likes(exists),orders(sum:price)');</code></pre><div class="reference-table" role="region" aria-label="IQL operation reference" tabindex="0"><table><thead><tr><th>Operation</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>limit / offset</td><td><code>limit:5,offset:10</code></td><td>Window related rows</td></tr><tr><td>order</td><td><code>order:created_at|desc</code></td><td>Order by a column</td></tr><tr><td>select</td><td><code>select:id|name</code></td><td>Load selected columns</td></tr><tr><td>filter</td><td><code>filter:status=active</code></td><td>Filter related rows</td></tr><tr><td>aggregates</td><td><code>count</code>, <code>exists</code>, <code>sum:price</code></td><td>Attach computed attributes</td></tr></tbody></table></div><p>Aggregation-only includes skip relation hydration and run optimized batch queries.</p></section>
+
+        <section id="validation" class="doc-section"><span class="section-kicker">08 — INPUT</span><h2>Validation</h2><p>Define input contracts as typed Payload classes. When a payload is injected into a controller, Green validates and hydrates it before your action runs.</p><pre data-lang="PHP"><code>final class CreatePostPayload extends Payload
+{
+    public string $title;
+    public ?string $body = null;
+
+    public function rules(): array
+    {
+        return [
+            'title' =&gt; ['required', 'string', 'max:120'],
+            'body' =&gt; ['nullable', 'string'],
+        ];
+    }
+}</code></pre></section>
+
+        <section id="views" class="doc-section"><span class="section-kicker">07 — PRESENTATION</span><h2>Views & Twig</h2><p>Green integrates Twig with named routes, translation, CSRF, and route-state helpers. View paths, cache behavior, and debug mode come from typed configuration.</p><pre data-lang="TWIG"><code>&lt;form method="post" action="{{ route('posts.store') }}"&gt;
+  {{ csrf_field() }}
+  &lt;input name="title" required&gt;
+  &lt;button&gt;Publish&lt;/button&gt;
+&lt;/form&gt;</code></pre></section>
+
+        <section id="authentication" class="doc-section"><span class="section-kicker">08 — SECURITY</span><h2>Authentication</h2><p>Authentication resolves one identity for one request. Web requests use sessions by default; JWT support is an optional Composer adapter.</p><div class="flow"><span>Request</span><i>→</i><span>Authenticator</span><i>→</i><span>Identity</span><i>→</i><span>Controller</span></div><pre data-lang="PHP"><code>#[Route('GET', '/profile', middleware: [SessionAuthMiddleware::class])]
+public function show(Request $request): mixed
+{
+    return $request-&gt;user();
+}
+
+auth()-&gt;check(); // Is an identity resolved?
+auth()-&gt;id();    // The identity's primary key
+auth()-&gt;user();  // The resolved identity</code></pre><div class="callout warning"><strong>Authentication ≠ authorization</strong><p>Authentication answers who is making the request. Authorization asks whether that identity may perform an action. Failed authentication returns 401; failed authorization returns 403.</p></div></section>
+
+        <section id="authorization" class="doc-section"><span class="section-kicker">09 — SECURITY</span><h2>Authorization</h2><p>Register a policy for a resource, then check or enforce abilities through the container-owned Authorizer.</p><pre data-lang="PHP"><code>authorizer()-&gt;policy(User::class, UserPolicy::class);
+
+authorizer()-&gt;check('update', $user, $currentUser);     // bool
+authorizer()-&gt;authorize('update', $user, $currentUser); // or 403</code></pre></section>
+
+        <section id="sessions-security" class="doc-section"><span class="section-kicker">10 — SECURITY</span><h2>Sessions, hashing & CSRF</h2><h3 id="sessions">Session state</h3><p>The container-managed session starts lazily and supports persistent values, one-request flash data, ID regeneration, and invalidation.</p><pre data-lang="PHP"><code>session()-&gt;set('key', 'value');
+$value = session()-&gt;get('key');
+session()-&gt;flash('message', 'Saved!');
+
+$hasher = new PasswordHasher();
+$hash = $hasher-&gt;hash('secret'); // bcrypt by default</code></pre><h3 id="csrf">CSRF protection</h3><p>CSRF protection is enabled by default for <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code>. Tokens are session-backed, time-limited, and single-use.</p><pre data-lang="TWIG"><code>&lt;form method="POST" action="/posts"&gt;
+  {{ csrf_field() }}
+  &lt;input name="title"&gt;
+  &lt;button&gt;Save&lt;/button&gt;
+&lt;/form&gt;
+
+{# For AJAX, call once and retain both values. #}
+{% set csrf = csrf_token() %}</code></pre><div class="callout warning"><strong>One token pair per request</strong><p>Each <code>csrf_token()</code> call creates a new pair. Store it and send both values through the configured inputs or <code>X-CSRF-ID</code> / <code>X-CSRF-TOKEN</code> headers.</p></div></section>
+
+        <section id="queues" class="doc-section"><span class="section-kicker">11 — BACKGROUND WORK</span><h2>Queues</h2><p>Jobs explicitly implement <code>JobInterface</code>. Use the synchronous driver while developing or the database driver with a supervised worker in production.</p><pre data-lang="PHP"><code>$jobId = $queue-&gt;dispatch(
+    new SendWelcomeEmail($user-&gt;email, $user-&gt;name),
+    queue: 'emails',
+    connection: 'database',
+);
+
+// Start a worker
+php green queue:work --queue=emails --connection=database</code></pre></section>
+
+        <section id="signals" class="doc-section"><span class="section-kicker">11 — EVENTS</span><h2>Signals</h2><p>Signals are a small synchronous event system for decoupling application behavior. Lower priority values run first; returning <code>false</code> stops propagation.</p><pre data-lang="PHP"><code>signal()-&gt;listen('user.created', function (array $payload) {
+    // Welcome the new user.
+}, priority: 0);
+
+$results = signal()-&gt;emit('user.created', ['user' =&gt; $user]);</code></pre></section>
+
+        <section id="storage" class="doc-section"><span class="section-kicker">12 — FILES & CACHE</span><h2>Storage</h2><p>The Drive subsystem offers a uniform API for local, S3-compatible, and in-memory test storage. All paths pass through a security-focused validator before filesystem access.</p><pre data-lang="PHP"><code>drive()-&gt;put('avatars/42.jpg', $contents);
+drive()-&gt;exists('avatars/42.jpg');
+drive()-&gt;readStream('exports/report.csv');
+
+cache()-&gt;remember('dashboard.stats', 300, fn () =&gt; $stats-&gt;build());</code></pre></section>
+
+        <section id="architecture" class="doc-section"><span class="section-kicker">13 — INTERNALS</span><h2>Architecture</h2><p>A request follows a short, observable path. The application container owns shared services; subsystem managers own focused driver selection and runtime behavior.</p><div class="architecture"><div><b>01</b><strong>Capture</strong><small>Request from PHP globals</small></div><span>→</span><div><b>02</b><strong>Match</strong><small>FastRoute dispatcher</small></div><span>→</span><div><b>03</b><strong>Pipeline</strong><small>Global + route middleware</small></div><span>→</span><div><b>04</b><strong>Invoke</strong><small>Reflection + DI</small></div><span>→</span><div><b>05</b><strong>Respond</strong><small>Normalize + send</small></div></div><h3>Configuration precedence</h3><div class="flow"><span>Defaults</span><i>→</i><span>Environment</span><i>→</i><span>config/*.php</span><i>→</i><span>Overrides</span></div><p>The result is one immutable configuration snapshot. Runtime services receive narrow contracts or typed configuration objects—never mutable global state.</p><a class="text-link" href="https://github.com/YasserElgammal/green-core/blob/dev/docs/architecture.md" target="_blank" rel="noreferrer">Read the complete internal architecture →</a></section>
+
+        <section id="deployment" class="doc-section"><span class="section-kicker">14 — PRODUCTION</span><h2>Deployment</h2><p>Point your web server’s document root at <code>public/</code>, keep secrets out of source control, enable HTTPS, and build the framework caches during deployment.</p><pre data-lang="TERMINAL"><code>composer install --no-dev --optimize-autoloader
+php green migrate
+php green config:cache
+
+# Keep database queue workers alive with your process supervisor.
+php green queue:work --connection=database</code></pre><div class="next-card"><div><span>NEXT</span><h3>Explore the source</h3><p>Read the application skeleton, tests, and release notes on GitHub.</p></div><a class="button primary" href="https://github.com/YasserElgammal/green" target="_blank" rel="noreferrer">Open repository <span>↗</span></a></div></section>
+        <section id="connect" class="doc-section"><span class="section-kicker">15 — OUTBOUND HTTP</span><h2>Connect</h2><p>Connect handles calls to payment gateways, messaging providers, CRMs, and other external APIs. Named connections centralize base URLs, headers, and timeouts.</p><pre data-lang="PHP"><code>$response = connect()
+    -&gt;connection('payments')
+    -&gt;withToken($token)
+    -&gt;retry(3, 200)
+    -&gt;post('/charges', ['amount' =&gt; 1000, 'currency' =&gt; 'usd']);
+
+if ($response-&gt;successful()) {
+    $charge = $response-&gt;json();
+}</code></pre><p>HTTP errors do not throw automatically; call <code>-&gt;throw()</code> when desired. Tests can use <code>connect()-&gt;fake()</code> and sent-request assertions.</p></section>
+
+        <section id="cache" class="doc-section"><span class="section-kicker">16 — PERFORMANCE</span><h2>Cache</h2><p>The unified cache manager ships with array, file, database, and Redis drivers. Use the default store or select one explicitly.</p><pre data-lang="PHP"><code>$value = cache()-&gt;get('key');
+cache()-&gt;put('key', $value, 60);
+$result = cache()-&gt;remember('stats', 300, fn () =&gt; expensive_lookup());
+
+cache()-&gt;store('redis')-&gt;put('preview', $data, 30);</code></pre><p>Custom drivers register through <code>CacheManager::extend()</code> and implement <code>CacheDriverInterface</code>.</p></section>
+
+        <section id="localization" class="doc-section"><span class="section-kicker">17 — LOCALIZATION</span><h2>Translations & pluralization</h2><p>JSON translations are grouped by the first key segment. Green supports interpolation, fallback locales, Twig helpers, CLDR pluralization—including Arabic’s six forms—and parsed translation caching.</p><pre data-lang="PHP"><code>t('home.welcome');
+t('layout.hello', ['name' =&gt; 'Yasser']);
+trans_choice('posts.comments_count', 5, ['count' =&gt; 5]);
+
+php green translation:clear</code></pre><div class="callout"><strong>Key resolution</strong><p><code>auth.login.title</code> reads <code>lang/{locale}/auth.json</code> at <code>login.title</code>. Keys without a dot use <code>messages.json</code>.</p></div></section>
+
+        <section id="errors" class="doc-section"><span class="section-kicker">18 — DIAGNOSTICS</span><h2>Errors, debugging & logging</h2><p>The global exception handler catches exceptions, warnings, and fatal errors. Debug mode renders detailed diagnostics; production returns sanitized HTML or structured JSON based on the request.</p><pre data-lang="PHP"><code>final class PaymentService
+{
+    public function __construct(private readonly Logger $logger) {}
+
+    public function process(): void
+    {
+        $this-&gt;logger-&gt;info('Payment started', ['user_id' =&gt; 1]);
+    }
+}
+
+leaf($user); // formatted dump, then terminate</code></pre><p>The logger supports pluggable drivers, deduplication, rate limiting, and loop prevention. Use <code>leaf()</code> only in development; configure its limits with published config or <code>leaf_config()</code>.</p></section>
+
+        <section id="console" class="doc-section"><span class="section-kicker">19 — TOOLING</span><h2>Console commands</h2><p>The <code>green</code> executable serves the app, generates framework classes, manages translations and migrations, runs queue workers, and publishes optional configuration.</p><pre data-lang="TERMINAL"><code>php green list
+php green serve
+php green create:model Car
+php green create:controller Car
+php green create:provider App
+php green create:policy Post
+php green create:event UserCreated
+php green create:listener SendWelcome
+
+php green publish:config leaf
+php green publish:config csrf
+php green publish:config connect
+php green publish:config drive</code></pre><p>Built-in defaults remain active when a config file is not published. Publish only the subsystems you need to customize.</p></section>
+
+        <section id="migrations" class="doc-section"><span class="section-kicker">20 — DATABASE OPERATIONS</span><h2>Migrations & schema</h2><p>Migrations are ordered PHP classes with reversible <code>up()</code> and <code>down()</code> methods. Green records completed files in batches and rolls the latest batch back in reverse order.</p><pre data-lang="TERMINAL"><code>php green create:migration create_orders_table
+php green migrate
+php green migrate:status
+php green migrate:rollback
+
+php green migrate --dry    # Preview SQL
+php green migrate --force  # Allow destructive operations</code></pre><pre data-lang="PHP"><code>Schema::create('orders', function (Blueprint $table): void {
+    $table-&gt;id();
+    $table-&gt;string('reference')-&gt;unique();
+    $table-&gt;decimal('total', 10, 2);
+    $table-&gt;timestamps();
+});</code></pre><div class="callout warning"><strong>Safe by default</strong><p>Destructive operations such as dropping a table require <code>--force</code>. Use <code>--dry</code> first to inspect generated SQL.</p></div></section>
+
+        <section id="helpers" class="doc-section"><span class="section-kicker">21 — REFERENCE</span><h2>Helper reference</h2><div class="reference-table" role="region" aria-label="Global helper reference" tabindex="0"><table><thead><tr><th>Helper</th><th>Purpose</th></tr></thead><tbody><tr><td><code>view()</code> / <code>response_json()</code></td><td>Render Twig or create JSON responses</td></tr><tr><td><code>session()</code> / <code>redirect()</code></td><td>Session state and redirects</td></tr><tr><td><code>transform()</code> / <code>paginate()</code></td><td>Serialize and paginate data</td></tr><tr><td><code>csrf_token()</code> / <code>csrf_field()</code></td><td>Create CSRF token pairs or inputs</td></tr><tr><td><code>connect()</code> / <code>drive()</code> / <code>cache()</code></td><td>Resolve infrastructure managers</td></tr><tr><td><code>signal()</code> / <code>authorizer()</code></td><td>Events and authorization</td></tr><tr><td><code>route()</code></td><td>Generate a named route URL</td></tr><tr><td><code>leaf()</code> / <code>leaf_config()</code></td><td>Development dump and configuration</td></tr></tbody></table></div></section>
+        <section id="about-yasser" class="doc-section author-section">
+          <span class="section-kicker">CREATOR &amp; MAINTAINER</span>
+          <div class="author-card">
+            <img class="author-photo" src="https://yasserelgammal.github.io/assets/images/profile_pic_yasser_elgammal_256.webp" width="112" height="112" alt="Yasser Elgammal" loading="lazy">
+            <div class="author-copy">
+              <h2>About Yasser Elgammal</h2>
+              <p>Yasser is a backend developer specializing in PHP, Laravel, Go, APIs, and scalable backend architecture. He builds practical systems for real-world products across fintech, e-commerce, ERP, e-learning, and booking platforms—and created Green to make PHP development explicit, lightweight, and easier to reason about.</p>
+              <div class="author-actions">
+                <a class="button primary" href="https://yasserelgammal.github.io" target="_blank" rel="noopener noreferrer">Visit portfolio <span>↗</span></a>
+                <div class="social-links" aria-label="Yasser Elgammal on social media">
+                  <a href="https://linkedin.com/in/elgammal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                  <a href="https://twitter.com/yasserelgammal" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                  <a href="https://github.com/yasserelgammal" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                  <a href="https://www.youtube.com/@yasser.elgammal" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <footer>
+        <span>&copy; 2026 Green. Released under the MIT License.</span>
+        <div class="footer-links"><a href="https://yasserelgammal.github.io" target="_blank" rel="noopener noreferrer">Yasser Elgammal</a><span aria-hidden="true">·</span><a href="#about-yasser">About</a></div>
+      </footer>
+    </main>
+
+    <aside class="toc" aria-label="On this page"><p>ON THIS PAGE</p><nav id="toc-list"></nav><a href="https://github.com/YasserElgammal/green/issues" target="_blank" rel="noreferrer">Found an issue? ↗</a></aside>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <dialog class="search-dialog" id="search-dialog"><div class="search-box"><svg viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg><input id="search-input" type="search" placeholder="Search Green docs…" autocomplete="off"><kbd>Esc</kbd></div><div class="search-results" id="search-results"></div></dialog>
+</body>
+</html>
