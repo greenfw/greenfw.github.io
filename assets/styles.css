@@ -14,4 +14,6 @@
 @media(max-width:1120px){footer{right:28px;left:308px}}
 @media(max-width:800px){footer{right:20px;left:20px}}
 @media(max-width:900px){.packages-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.topbar{gap:4px}.brand{gap:4px}.brand-logo{width:96px;height:40px}.brand .brand-docs{display:inline;font-size:13px;white-space:nowrap}.search-trigger{width:36px;height:36px}.icon-button{width:36px;height:36px}.top-actions{gap:2px}}
+@media(max-width:360px){.brand-logo{width:82px}.brand .brand-docs{font-size:12px}.topbar{padding-inline:8px}}
 @media(max-width:600px){.author-card{grid-template-columns:1fr;padding:24px}.author-photo{width:88px;height:88px}.author-copy h2{font-size:29px}.author-actions{align-items:flex-start;flex-direction:column}}
